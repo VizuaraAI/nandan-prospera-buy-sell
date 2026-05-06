@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nandan Prospera Buy & Sell</title>
+    <meta
+      name="description"
+      content="A light, useful resident marketplace for Nandan Prospera."
+    />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Nandan Prospera Buy and Sell home">
+          <span class="brand-mark">NP</span>
+          <span>
+            <strong>Nandan Prospera</strong>
+            <small>Buy & Sell</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#market">Marketplace</a>
+          <a href="#sell">Sell</a>
+          <a href="#trust">Safety</a>
+        </div>
+        <a class="nav-cta" href="#sell">
+          <i data-lucide="plus-circle"></i>
+          List item
+        </a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="hero-content">
+          <p class="eyebrow">Resident-only marketplace</p>
+          <h1>Nandan Prospera homes helping each other buy, sell, and reuse.</h1>
+          <p class="hero-copy">
+            Find pre-loved furniture, gadgets, books, toys, cycles, services, and
+            everyday essentials from trusted neighbours inside the society.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#market">
+              <i data-lucide="shopping-bag"></i>
+              Browse listings
+            </a>
+            <a class="secondary-action" href="#sell">
+              <i data-lucide="camera"></i>
+              Sell something
+            </a>
+          </div>
+          <div class="hero-stats" aria-label="Marketplace highlights">
+            <span><strong>42</strong> active listings</span>
+            <span><strong>8</strong> categories</span>
+            <span><strong>12 min</strong> average reply</span>
+          </div>
+        </div>
+        <div class="hero-showcase" aria-label="Featured marketplace preview">
+          <article class="showcase-card main-card">
+            <img
+              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+              alt="Laptop on a wooden desk"
+            />
+            <div>
+              <span class="status-pill">Featured</span>
+              <h2>MacBook Air M1</h2>
+              <p>Excellent condition, with charger and sleeve.</p>
+              <strong>Rs 48,000</strong>
+            </div>
+          </article>
+          <article class="showcase-card mini-card top">
+            <i data-lucide="shield-check"></i>
+            <span>Verified society residents</span>
+          </article>
+          <article class="showcase-card mini-card bottom">
+            <i data-lucide="map-pin"></i>
+            <span>Pickup from towers A to H</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="quick-strip" aria-label="Quick marketplace benefits">
+        <div>
+          <i data-lucide="recycle"></i>
+          <span>Reuse within the community</span>
+        </div>
+        <div>
+          <i data-lucide="message-circle"></i>
+          <span>Chat before you buy</span>
+        </div>
+        <div>
+          <i data-lucide="badge-indian-rupee"></i>
+          <span>No platform fees</span>
+        </div>
+        <div>
+          <i data-lucide="clock-3"></i>
+          <span>Same-day pickup</span>
+        </div>
+      </section>
+
+      <section id="market" class="market-section">
+        <div class="section-heading">
+          <p class="eyebrow">Marketplace</p>
+          <h2>Fresh listings from your neighbours</h2>
+          <p>Search, filter, save favourites, and contact sellers in a few taps.</p>
+        </div>
+
+        <div class="toolbar" aria-label="Marketplace filters">
+          <label class="search-box">
+            <i data-lucide="search"></i>
+            <input id="searchInput" type="search" placeholder="Search furniture, cycles, books..." />
+          </label>
+          <select id="categoryFilter" aria-label="Filter by category">
+            <option value="All">All categories</option>
+          </select>
+          <select id="conditionFilter" aria-label="Filter by condition">
+            <option value="All">Any condition</option>
+            <option value="Like new">Like new</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+          </select>
+          <select id="sortFilter" aria-label="Sort listings">
+            <option value="newest">Newest</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </div>
+
+        <div class="market-layout">
+          <aside class="insight-panel" aria-label="Community insights">
+            <div class="panel-block">
+              <span class="panel-kicker">This week</span>
+              <strong>18 items found new homes</strong>
+              <p>Books, study tables, appliances, and toys moved fastest.</p>
+            </div>
+            <div class="panel-block">
+              <span class="panel-kicker">Popular request</span>
+              <strong>Kids cycles</strong>
+              <p>Four families are looking for cycles for ages 7 to 12.</p>
+            </div>
+            <a class="panel-link" href="#sell">
+              <i data-lucide="sparkles"></i>
+              Add what you no longer use
+            </a>
+          </aside>
+          <div>
+            <div id="resultsMeta" class="results-meta"></div>
+            <div id="listingGrid" class="listing-grid" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sell" class="sell-section">
+        <div class="sell-copy">
+          <p class="eyebrow">List in minutes</p>
+          <h2>Turn unused things at home into value for another family.</h2>
+          <p>
+            Add a clear title, honest condition, fair price, and pickup tower.
+            Your demo listing appears instantly on this page.
+          </p>
+          <div class="sell-tips">
+            <span><i data-lucide="image"></i> Use bright photos</span>
+            <span><i data-lucide="file-check-2"></i> Mention defects</span>
+            <span><i data-lucide="handshake"></i> Meet in common areas</span>
+          </div>
+        </div>
+        <form id="listingForm" class="listing-form">
+          <div class="form-row two">
+            <label>
+              Item name
+              <input name="title" required maxlength="48" placeholder="Study table with chair" />
+            </label>
+            <label>
+              Price
+              <input name="price" required min="0" type="number" placeholder="2500" />
+            </label>
+          </div>
+          <div class="form-row two">
+            <label>
+              Category
+              <select name="category" required>
+                <option>Furniture</option>
+                <option>Electronics</option>
+                <option>Books</option>
+                <option>Kids</option>
+                <option>Sports</option>
+                <option>Home</option>
+                <option>Services</option>
+              </select>
+            </label>
+            <label>
+              Condition
+              <select name="condition" required>
+                <option>Like new</option>
+                <option>Good</option>
+                <option>Fair</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row two">
+            <label>
+              Tower
+              <input name="tower" required maxlength="16" placeholder="Tower C" />
+            </label>
+            <label>
+              Seller
+              <input name="seller" required maxlength="32" placeholder="Aarav S." />
+            </label>
+          </div>
+          <label>
+            Description
+            <textarea name="description" required maxlength="150" placeholder="Share size, age, accessories, and pickup notes."></textarea>
+          </label>
+          <button class="primary-action full-width" type="submit">
+            <i data-lucide="send"></i>
+            Publish demo listing
+          </button>
+          <p id="formMessage" class="form-message" role="status"></p>
+        </form>
+      </section>
+
+      <section id="trust" class="trust-section">
+        <div class="section-heading">
+          <p class="eyebrow">Built for society life</p>
+          <h2>Useful, safe, and practical for residents.</h2>
+        </div>
+        <div class="trust-grid">
+          <article>
+            <i data-lucide="user-check"></i>
+            <h3>Resident verification</h3>
+            <p>Listings show tower, seller name, and a resident badge for community trust.</p>
+          </article>
+          <article>
+            <i data-lucide="calendar-check"></i>
+            <h3>Easy pickup planning</h3>
+            <p>Buyers can coordinate lobby, clubhouse, or tower pickup with the seller.</p>
+          </article>
+          <article>
+            <i data-lucide="leaf"></i>
+            <h3>Less waste</h3>
+            <p>Families save money and keep useful items circulating inside Nandan Prospera.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="contactDialog" class="contact-dialog">
+      <button class="icon-button close-dialog" aria-label="Close dialog">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="dialogBody"></div>
+    </dialog>
+
+    <footer class="site-footer">
+      <span>Nandan Prospera Buy & Sell</span>
+      <span>Built as an AI product demo for young makers.</span>
+    </footer>
+  </body>
+</html>
