@@ -3,262 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nandan Prospera Buy & Sell</title>
-    <meta
-      name="description"
-      content="A light, useful resident marketplace for Nandan Prospera."
-    />
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script defer src="app.js"></script>
+    <title>Nandan SAT Studio</title>
+    <link rel="stylesheet" href="sat.css" />
+    <script defer src="sat.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav-shell" aria-label="Primary navigation">
-        <a class="brand" href="#top" aria-label="Nandan Prospera Buy and Sell home">
-          <span class="brand-mark">NP</span>
-          <span>
-            <strong>Nandan Prospera</strong>
-            <small>Buy & Sell</small>
-          </span>
-        </a>
-        <div class="nav-links">
-          <a href="#market">Marketplace</a>
-          <a href="#sell">Sell</a>
-          <a href="#trust">Safety</a>
-        </div>
-        <a class="nav-cta" href="#sell">
-          <i data-lucide="plus-circle"></i>
-          List item
-        </a>
-      </nav>
-    </header>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#dashboard"><span class="brand-mark">NS</span><span><strong>Nandan SAT</strong><small>AI prep studio</small></span></a>
+        <nav class="nav-list">
+          <button class="nav-item active" data-view="dashboard" type="button">⌂ <span>Dashboard</span></button>
+          <button class="nav-item" data-view="practice" type="button">✎ <span>Practice</span></button>
+          <button class="nav-item" data-view="groups" type="button">◎ <span>Groups</span></button>
+          <button class="nav-item" data-view="coach" type="button">✦ <span>AI Coach</span></button>
+        </nav>
+        <div class="student-card"><span class="avatar">A</span><span><strong>Aarav Mehta</strong><small>Grade 10 · Target 1500</small></span></div>
+      </aside>
 
-    <main id="top">
-      <section class="hero-section">
-        <div class="hero-content">
-          <p class="eyebrow">Resident-only marketplace</p>
-          <h1>Nandan Prospera homes helping each other buy, sell, and reuse.</h1>
-          <p class="hero-copy">
-            Find pre-loved furniture, gadgets, books, toys, cycles, services, and
-            everyday essentials from trusted neighbours inside the society.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-action" href="#market">
-              <i data-lucide="shopping-bag"></i>
-              Browse listings
-            </a>
-            <a class="secondary-action" href="#sell">
-              <i data-lucide="camera"></i>
-              Sell something
-            </a>
-          </div>
-          <div class="hero-stats" aria-label="Marketplace highlights">
-            <span><strong>42</strong> active listings</span>
-            <span><strong>8</strong> categories</span>
-            <span><strong>12 min</strong> average reply</span>
-          </div>
-        </div>
-        <div class="hero-showcase" aria-label="Featured marketplace preview">
-          <article class="showcase-card main-card">
-            <img
-              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
-              alt="Laptop on a wooden desk"
-            />
-            <div>
-              <span class="status-pill">Featured</span>
-              <h2>MacBook Air M1</h2>
-              <p>Excellent condition, with charger and sleeve.</p>
-              <strong>Rs 48,000</strong>
+      <main class="workspace">
+        <header class="topbar">
+          <div><p class="eyebrow">Nandan Prospera Workshop Demo</p><h1>One beautiful place to prepare for the SAT together.</h1></div>
+          <button class="primary-button" id="startSprint" type="button">Start 20 min sprint</button>
+        </header>
+
+        <section class="view active" data-panel="dashboard">
+          <div class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">AI Study Companion</p>
+              <h2>Diagnose skills, practice smarter, form pods, and learn from every mistake.</h2>
+              <p>A product concept kids can understand immediately: AI watches patterns, recommends the next skill, and makes SAT prep social instead of lonely.</p>
+              <div class="actions"><button class="primary-button" data-jump="practice" type="button">Take diagnostic</button><button class="ghost-button" data-jump="groups" type="button">Find a study pod</button></div>
             </div>
-          </article>
-          <article class="showcase-card mini-card top">
-            <i data-lucide="shield-check"></i>
-            <span>Verified society residents</span>
-          </article>
-          <article class="showcase-card mini-card bottom">
-            <i data-lucide="map-pin"></i>
-            <span>Pickup from towers A to H</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="quick-strip" aria-label="Quick marketplace benefits">
-        <div>
-          <i data-lucide="recycle"></i>
-          <span>Reuse within the community</span>
-        </div>
-        <div>
-          <i data-lucide="message-circle"></i>
-          <span>Chat before you buy</span>
-        </div>
-        <div>
-          <i data-lucide="badge-indian-rupee"></i>
-          <span>No platform fees</span>
-        </div>
-        <div>
-          <i data-lucide="clock-3"></i>
-          <span>Same-day pickup</span>
-        </div>
-      </section>
-
-      <section id="market" class="market-section">
-        <div class="section-heading">
-          <p class="eyebrow">Marketplace</p>
-          <h2>Fresh listings from your neighbours</h2>
-          <p>Search, filter, save favourites, and contact sellers in a few taps.</p>
-        </div>
-
-        <div class="toolbar" aria-label="Marketplace filters">
-          <label class="search-box">
-            <i data-lucide="search"></i>
-            <input id="searchInput" type="search" placeholder="Search furniture, cycles, books..." />
-          </label>
-          <select id="categoryFilter" aria-label="Filter by category">
-            <option value="All">All categories</option>
-          </select>
-          <select id="conditionFilter" aria-label="Filter by condition">
-            <option value="All">Any condition</option>
-            <option value="Like new">Like new</option>
-            <option value="Good">Good</option>
-            <option value="Fair">Fair</option>
-          </select>
-          <select id="sortFilter" aria-label="Sort listings">
-            <option value="newest">Newest</option>
-            <option value="low">Price: low to high</option>
-            <option value="high">Price: high to low</option>
-          </select>
-        </div>
-
-        <div class="market-layout">
-          <aside class="insight-panel" aria-label="Community insights">
-            <div class="panel-block">
-              <span class="panel-kicker">This week</span>
-              <strong>18 items found new homes</strong>
-              <p>Books, study tables, appliances, and toys moved fastest.</p>
+            <div class="visual-stage">
+              <canvas id="meshCanvas" width="640" height="420"></canvas>
+              <span class="floating-stat top"><strong>+80</strong> projected gain</span>
+              <span class="floating-stat bottom"><strong>14</strong> skills mapped</span>
             </div>
-            <div class="panel-block">
-              <span class="panel-kicker">Popular request</span>
-              <strong>Kids cycles</strong>
-              <p>Four families are looking for cycles for ages 7 to 12.</p>
-            </div>
-            <a class="panel-link" href="#sell">
-              <i data-lucide="sparkles"></i>
-              Add what you no longer use
-            </a>
-          </aside>
-          <div>
-            <div id="resultsMeta" class="results-meta"></div>
-            <div id="listingGrid" class="listing-grid" aria-live="polite"></div>
           </div>
-        </div>
-      </section>
 
-      <section id="sell" class="sell-section">
-        <div class="sell-copy">
-          <p class="eyebrow">List in minutes</p>
-          <h2>Turn unused things at home into value for another family.</h2>
-          <p>
-            Add a clear title, honest condition, fair price, and pickup tower.
-            Your demo listing appears instantly on this page.
-          </p>
-          <div class="sell-tips">
-            <span><i data-lucide="image"></i> Use bright photos</span>
-            <span><i data-lucide="file-check-2"></i> Mention defects</span>
-            <span><i data-lucide="handshake"></i> Meet in common areas</span>
+          <div class="metrics">
+            <article><span>Current score</span><strong>1320</strong><i style="--value:72%"></i></article>
+            <article><span>Reading</span><strong>660</strong><i style="--value:66%;--bar:#ffd36a"></i></article>
+            <article><span>Math</span><strong>660</strong><i style="--value:70%;--bar:#56f0b8"></i></article>
+            <article><span>Streak</span><strong>9 days</strong><i style="--value:90%;--bar:#ef6ea8"></i></article>
           </div>
-        </div>
-        <form id="listingForm" class="listing-form">
-          <div class="form-row two">
-            <label>
-              Item name
-              <input name="title" required maxlength="48" placeholder="Study table with chair" />
-            </label>
-            <label>
-              Price
-              <input name="price" required min="0" type="number" placeholder="2500" />
-            </label>
-          </div>
-          <div class="form-row two">
-            <label>
-              Category
-              <select name="category" required>
-                <option>Furniture</option>
-                <option>Electronics</option>
-                <option>Books</option>
-                <option>Kids</option>
-                <option>Sports</option>
-                <option>Home</option>
-                <option>Services</option>
-              </select>
-            </label>
-            <label>
-              Condition
-              <select name="condition" required>
-                <option>Like new</option>
-                <option>Good</option>
-                <option>Fair</option>
-              </select>
-            </label>
-          </div>
-          <div class="form-row two">
-            <label>
-              Tower
-              <input name="tower" required maxlength="16" placeholder="Tower C" />
-            </label>
-            <label>
-              Seller
-              <input name="seller" required maxlength="32" placeholder="Aarav S." />
-            </label>
-          </div>
-          <label>
-            Description
-            <textarea name="description" required maxlength="150" placeholder="Share size, age, accessories, and pickup notes."></textarea>
-          </label>
-          <button class="primary-action full-width" type="submit">
-            <i data-lucide="send"></i>
-            Publish demo listing
-          </button>
-          <p id="formMessage" class="form-message" role="status"></p>
-        </form>
-      </section>
 
-      <section id="trust" class="trust-section">
-        <div class="section-heading">
-          <p class="eyebrow">Built for society life</p>
-          <h2>Useful, safe, and practical for residents.</h2>
-        </div>
-        <div class="trust-grid">
-          <article>
-            <i data-lucide="user-check"></i>
-            <h3>Resident verification</h3>
-            <p>Listings show tower, seller name, and a resident badge for community trust.</p>
-          </article>
-          <article>
-            <i data-lucide="calendar-check"></i>
-            <h3>Easy pickup planning</h3>
-            <p>Buyers can coordinate lobby, clubhouse, or tower pickup with the seller.</p>
-          </article>
-          <article>
-            <i data-lucide="leaf"></i>
-            <h3>Less waste</h3>
-            <p>Families save money and keep useful items circulating inside Nandan Prospera.</p>
-          </article>
-        </div>
-      </section>
-    </main>
+          <div class="content-grid">
+            <article class="panel wide">
+              <div class="panel-head"><span><p class="eyebrow">Adaptive Roadmap</p><h3>Next best skills</h3></span><button class="chip-button" type="button">Rebalance</button></div>
+              <div class="skill-list">
+                <div class="skill"><b></b><span><strong>Linear equations under time pressure</strong><small>12 question micro-drill · 18 min</small></span><em>Priority 1</em></div>
+                <div class="skill amber"><b></b><span><strong>Transitions and logical flow</strong><small>Mini lesson from missed questions</small></span><em>Priority 2</em></div>
+                <div class="skill mint"><b></b><span><strong>Graphs, tables, and data claims</strong><small>Study room opens at 7:30 PM</small></span><em>Group</em></div>
+              </div>
+            </article>
+            <article class="panel"><p class="eyebrow">Live Pod</p><h3>Quant Circle</h3><div class="avatars"><span>R</span><span>M</span><span>S</span><span>Z</span></div><p>Three hard algebra questions, then peer review. The AI coach summarizes the trickiest mistake.</p><button class="ghost-button full" data-jump="groups" type="button">Join room</button></article>
+            <article class="panel"><p class="eyebrow">Plan</p><h3>This week</h3><div class="week"><span class="done">M</span><span class="done">T</span><span class="today">W</span><span>T</span><span>F</span><span>S</span><span>S</span></div><ul class="mini-list"><li><strong>Today</strong><span>Diagnostic review</span></li><li><strong>Friday</strong><span>Reading sprint</span></li><li><strong>Sunday</strong><span>Practice block</span></li></ul></article>
+          </div>
+        </section>
 
-    <dialog id="contactDialog" class="contact-dialog">
-      <button class="icon-button close-dialog" aria-label="Close dialog">
-        <i data-lucide="x"></i>
-      </button>
-      <div id="dialogBody"></div>
-    </dialog>
+        <section class="view" data-panel="practice">
+          <div class="section-title"><span><p class="eyebrow">Practice Lab</p><h2>Adaptive questions with instant explanations</h2></span><div class="segments"><button class="active" type="button">Math</button><button type="button">Reading</button><button type="button">Writing</button></div></div>
+          <div class="practice-layout">
+            <article class="question-card">
+              <div class="question-meta"><span>Medium · Algebra</span><strong id="timer">20:00</strong></div>
+              <h3>If 3x + 2y = 18 and x - y = 1, what is the value of x?</h3>
+              <div class="answers" id="answerGrid"><button data-correct="false" type="button">3</button><button data-correct="true" type="button">4</button><button data-correct="false" type="button">5</button><button data-correct="false" type="button">6</button></div>
+              <div class="explanation" id="explanation">Pick an answer to unlock the AI explanation and a follow-up drill.</div>
+            </article>
+            <aside class="panel"><p class="eyebrow">Weakness Detector</p><h3>What the AI sees</h3><div class="radar"><span style="--level:78%">Algebra</span><span style="--level:52%">Data</span><span style="--level:68%">Grammar</span><span style="--level:44%">Inference</span></div><button class="primary-button full" type="button">Generate 5-question drill</button></aside>
+          </div>
+        </section>
 
-    <footer class="site-footer">
-      <span>Nandan Prospera Buy & Sell</span>
-      <span>Built as an AI product demo for young makers.</span>
-    </footer>
+        <section class="view" data-panel="groups">
+          <div class="section-title"><span><p class="eyebrow">Study Together</p><h2>Pods, rooms, and friendly competition</h2></span><button class="primary-button" type="button">Create pod</button></div>
+          <div class="group-grid">
+            <article class="group-card"><div class="banner blue"></div><h3>Quant Circle</h3><p>Algebra drills, stopwatch rounds, mistake debates.</p><button type="button">Join</button></article>
+            <article class="group-card"><div class="banner green"></div><h3>Reading Ninjas</h3><p>Short passages, evidence hunts, vocabulary in context.</p><button type="button">Join</button></article>
+            <article class="group-card"><div class="banner coral"></div><h3>1500 Club</h3><p>High target planning with weekly full-test reviews.</p><button type="button">Apply</button></article>
+          </div>
+          <article class="panel leaderboard"><p class="eyebrow">Community</p><h3>Nandan leaderboard</h3><ol><li><span>Mira</span><strong>1,540 pts</strong></li><li><span>Aarav</span><strong>1,320 pts</strong></li><li><span>Rhea</span><strong>1,290 pts</strong></li><li><span>Kabir</span><strong>1,220 pts</strong></li></ol></article>
+        </section>
+
+        <section class="view" data-panel="coach">
+          <div class="section-title"><span><p class="eyebrow">AI Coach</p><h2>A tutor that remembers your mistakes</h2></span></div>
+          <div class="coach-layout">
+            <article class="chat-panel"><div class="message ai"><strong>Coach</strong><p>You solve algebra well when it is direct. Your misses happen when two equations need substitution.</p></div><div class="message user"><strong>Aarav</strong><p>Make it fast.</p></div><div class="message ai"><strong>Coach</strong><p>I’ll show one pattern, then two questions where the numbers change but the logic stays the same.</p></div><form class="composer"><input aria-label="Ask AI coach" placeholder="Ask for a hint, lesson, or plan..." /><button class="primary-button">Send</button></form></article>
+            <aside class="panel"><p class="eyebrow">Coach Memory</p><h3>Personal signals</h3><ul class="mini-list"><li><strong>Best time</strong><span>7 PM sessions</span></li><li><strong>Common trap</strong><span>Rushing signs</span></li><li><strong>Motivator</strong><span>Team sprints</span></li><li><strong>Next reward</strong><span>Practice badge</span></li></ul></aside>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
