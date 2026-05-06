@@ -1,19 +1,20 @@
-# Nandan Prospera Book Club
+# Nandan Prospera Buy & Sell
 
-A workshop-ready static website for a teen book club at Nandan Prospera.
+A light-themed resident marketplace demo for Nandan Prospera. It is designed as a workshop-ready example for kids aged 13 to 18 to see how AI can help build useful products for a real community.
 
-## What It Shows
+## Features
 
-- Current book and reading progress
-- Book shelf with original cover-style thumbnails
-- Upcoming and recent club events
-- AI project ideas that students can build from the club
-- A small interactive reading-circle idea form
-- GitHub Pages deployment workflow
+- Search, category, condition, and price sorting
+- Resident-style marketplace listing cards
+- Save favourites with local storage
+- Contact seller modal with call and WhatsApp actions
+- Demo listing form that publishes instantly on the page
+- Responsive design for desktop and mobile
+- GitHub Pages workflow
 
 ## Local Preview
 
-Open `index.html` directly in a browser, or run:
+Open `index.html` directly in a browser, or run a simple local server:
 
 ```bash
 python3 -m http.server 8000
